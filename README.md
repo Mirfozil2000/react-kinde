@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Kinde Starter Kit - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Register an account on Kinde
 
-## Available Scripts
+To get started set up an account on [Kinde](https://app.kinde.com/register).
 
-In the project directory, you can run:
+## Setup your local environment
 
-### `npm start`
+Clone this repo and install dependencies by running `npm i`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Make a copy of `.env_sample` and name it simply `.env`. Set the following values from the Kinde `Settings -> Applications -> Frontend app` page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `VITE_KINDE_CLIENT_ID` with the `Client ID` value
+- `VITE_KINDE_DOMAIN` with the `Domain` value
 
-### `npm test`
+e.g
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+VITE_KINDE_CLIENT_ID=<your_kinde_client_id>
+VITE_KINDE_DOMAIN=https://<your_kinde_subdomain>.kinde.com
+```
 
-### `npm run build`
+## Set your Callback and Logout URLs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Your user will be redirected to Kinde to authenticate. After they have logged in or registered they will be redirected back to your React application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You need to specify in Kinde which url you would like your user to be redirected to in order to authenticate your app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On the `Settings -> Applications -> Frontend app` page set `Allowed callback URLs` to `http://localhost:3000`
 
-### `npm run eject`
+> Important! This is required for your users to successfully log in to your app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You will also need to set the url they will be redirected to upon logout. Set the ` Allowed logout redirect URLs` to http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Start your app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Run `npm start` in a terminal and navigate to `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Click on `Sign up` and register your first user for your business!
 
-## Learn More
+## View users in Kinde
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you navigate to the "Users" page within Kinde you will see your newly registered user there. 🚀
